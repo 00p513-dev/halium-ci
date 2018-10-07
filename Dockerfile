@@ -1,5 +1,7 @@
 FROM debian:testing
 
+RUN echo "deb http://deb.debian.org/debian testing contrib" >> /etc/apt/sources.list
+
 RUN apt update && \
     apt install git gnupg flex bison gperf build-essential \
     zip curl libc6-dev x11proto-core-dev \
