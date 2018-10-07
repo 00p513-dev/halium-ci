@@ -1,19 +1,8 @@
 image: jbbgameich/halium-ci
 
 stages:
-  - init
   - build
   - deploy
-
-repo_init:
-  stage: init
-  cache:
-    paths:
-      - halium
-  script:
-    - mkdir halium && cd halium
-    - repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
-    - repo sync -c -j 16
 
 build:yuga:
   stage: build
