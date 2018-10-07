@@ -16,7 +16,14 @@ build:yuga:
   stage: build
   script: ./build-device.sh yuga yuga
 
-build:yuga:
+build:chaozu:
   stage: build
   script: ./build-device.sh chaozu chaozu
 
+build:scorpion:
+  stage: build
+  script: ./build-device.sh scorpion sgp621
+
+build:mako:
+  stage: build
+  script: ./build-device.sh mako mako
