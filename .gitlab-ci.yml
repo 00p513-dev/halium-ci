@@ -7,6 +7,9 @@ stages:
 
 repo_init:
   stage: init
+  cache:
+    paths:
+      - halium
   script:
     - mkdir halium && cd halium
     - repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
