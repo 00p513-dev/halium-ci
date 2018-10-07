@@ -9,7 +9,7 @@ repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
 repo sync -c -j 16
 
 # Actually start building
-source source build/envsetup.sh
+source build/envsetup.sh
 ./halium/devices/setup $DEVICE
 breakfast $PRODUCT
 mka hybris-boot halium-boot systemimage
