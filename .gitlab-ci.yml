@@ -1,4 +1,4 @@
-image: jbbgameich/halium
+image: jbbgameich/halium-ci
 
 stages:
   - init
