@@ -12,10 +12,10 @@ build:chaozu:
   stage: build
   script: ./build-device.sh chaozu lineage_chaozu
 
-build:scorpion:
+build:bullhead:
   stage: build
-  script: ./build-device.sh scorpion aosp_sgp621
+  script: ./build-device.sh bullhead aosp_bullhead
 
-build:mako:
+build:deb:
   stage: build
-  script: ./build-device.sh mako aosp_mako
+  script: ./build-device.sh deb aosp_deb
