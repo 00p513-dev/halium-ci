@@ -8,8 +8,13 @@ mkdir halium && cd halium
 repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
 repo sync -q -c -j 16
 
-# Actually start building
+# Download device specific sources
 source build/envsetup.sh
 ./halium/devices/setup ${DEVICE} --force-sync
+
+# Delete git metadata to free up space
+rm .repo -rf
+
+# Actually start building
 lunch ${PRODUCT}-userdebug
 mka hybris-boot halium-boot systemimage
