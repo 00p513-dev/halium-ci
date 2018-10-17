@@ -6,16 +6,16 @@ stages:
 
 build:yuga:
   stage: build
-  script: ./build-device.sh yuga yuga
+  script: ./build-device.sh yuga lineage_yuga
 
 build:chaozu:
   stage: build
-  script: ./build-device.sh chaozu chaozu
+  script: ./build-device.sh chaozu lineage_chaozu
 
 build:scorpion:
   stage: build
-  script: ./build-device.sh scorpion sgp621
+  script: ./build-device.sh scorpion aosp_sgp621
 
 build:mako:
   stage: build
-  script: ./build-device.sh mako mako
+  script: ./build-device.sh mako aosp_mako
