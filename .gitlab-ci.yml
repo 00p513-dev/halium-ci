@@ -1,4 +1,4 @@
-image: z3ntu/halium-7.1-build-env
+image: jbbgameich/halium-ci
 
 stages:
   - build
