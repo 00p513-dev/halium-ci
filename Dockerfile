@@ -33,7 +33,8 @@ RUN apt update && \
         imagemagick \
         cpio \
         bc \
-        liblz4-tool && \
+        liblz4-tool \
+        lzop && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
