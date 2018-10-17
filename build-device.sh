@@ -16,9 +16,7 @@ source build/envsetup.sh
 rm .repo -rf
 
 # Delete non-linux build tools
-rm -rf \
-	$(find prebuilts -name "darwin*" -o -name "windows*" -type d) \
-	prebuilts/sdk/
+rm $(find prebuilts -name "darwin*" -o -name "windows*" -type d) -rf
 
 # Actually start building
 lunch ${PRODUCT}-userdebug
