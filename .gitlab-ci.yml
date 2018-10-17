@@ -18,4 +18,4 @@ build:bullhead:
 
 build:deb:
   stage: build
-  script: ./build-device.sh deb aosp_deb
+  script: ./build-device.sh deb lineage_deb
