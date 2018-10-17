@@ -10,6 +10,6 @@ repo sync -q -c -j 16
 
 # Actually start building
 source build/envsetup.sh
-./halium/devices/setup ${DEVICE}
+./halium/devices/setup ${DEVICE} --force-sync
 lunch ${PRODUCT}-userdebug
 mka hybris-boot halium-boot systemimage
