@@ -1,12 +1,44 @@
-FROM debian:testing
+FROM debian:stretch
 
-RUN echo "deb http://deb.debian.org/debian testing contrib" >> /etc/apt/sources.list
+# Prepare the Build Environment
+RUN apt update \
+ && apt install -y \
+    openjdk-8-jdk \
+    git-core \
+    gnupg \
+    flex \
+    bison \
+    gperf \
+    build-essential \
+    zip \
+    curl \
+    zlib1g-dev \
+    gcc-multilib \
+    g++-multilib \
+    libc6-dev-i386 \
+    lib32ncurses5-dev \
+    x11proto-core-dev \
+    libx11-dev \
+    lib32z-dev \
+    libgl1-mesa-dev \
+    libxml2-utils \
+    xsltproc \
+    unzip \
+    make \
+    python-networkx \
+    ca-certificates \
+    vim \
+    schedtool \
+    bsdmainutils \
+    imagemagick \
+    cpio \
+    bc
+ && apt clean \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN dpkg --add-architecture i386 && \
-    apt update && \
-    apt install git gnupg flex bison gperf build-essential \
-        zip bzr curl libc6-dev lib32ncurses-dev libncurses5-dev libncurses5-dev:i386 x11proto-core-dev \
-        libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
-        libgl1-mesa-dev g++-multilib mingw-w64-i686-dev tofrodos \
-        python-markdown libxml2-utils xsltproc zlib1g-dev:i386 schedtool \
-        repo liblz4-tool bc lzop -y
+# Install repo
+RUN mkdir -p /usr/local/repo/bin \
+ && curl --tlsv1 https://storage.googleapis.com/git-repo-downloads/repo > \
+    /usr/local/repo/bin/repo \
+ && chmod +x /usr/local/repo/bin/repo
+ENV PATH /usr/local/repo/bin:$PATH
