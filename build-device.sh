@@ -16,7 +16,9 @@ source build/envsetup.sh
 rm .repo -rf
 
 # Delete non-linux build tools
-rm $(find prebuilts -name "darwin*" -o -name "windows*" -type d) -rf
+rm -rf \
+	$(find prebuilts -name "darwin*" -o -name "windows*" -type d) \
+	$(find . -name "*.jar")
 
 # Actually start building
 lunch ${PRODUCT}-userdebug
