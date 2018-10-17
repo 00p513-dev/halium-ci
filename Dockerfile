@@ -32,7 +32,8 @@ RUN apt update && \
         bsdmainutils \
         imagemagick \
         cpio \
-        bc && \
+        bc \
+        lz4 && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
