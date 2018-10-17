@@ -15,6 +15,9 @@ source build/envsetup.sh
 # Delete git metadata to free up space
 rm .repo -rf
 
+# Delete non-linux build tools
+rm $(find prebuilts -name "darwin*" -o -name "windows*" -type d) -rf
+
 # Actually start building
 lunch ${PRODUCT}-userdebug
 mka hybris-boot halium-boot systemimage
