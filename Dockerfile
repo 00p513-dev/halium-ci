@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM ubuntu:xenial
 
 # Prepare the Build Environment
 RUN apt update && \
