@@ -4,6 +4,14 @@ stages:
   - build
   - deploy
 
+variables:
+  USE_CCACHE: true
+  CCACHE_DIR: $CI_PROJECT_DIR/ccache
+
+cache:
+  paths:
+    - ccache
+
 build:yuga:
   stage: build
   variables:
