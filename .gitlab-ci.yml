@@ -6,16 +6,28 @@ stages:
 
 build:yuga:
   stage: build
-  script: ./build-device.sh yuga lineage_yuga
+  variables:
+    DEVICE: "yuga"
+    PRODUCT: "lineage_yuga"
+  script: ./build-device.sh $DEVICE $PRODUCT
 
 build:chaozu:
   stage: build
-  script: ./build-device.sh chaozu lineage_chaozu
+  variables:
+    DEVICE: "chaozu"
+    PRODUCT: "lineage_chaozu"
+  script: ./build-device.sh $DEVICE $PRODUCT
 
 build:bullhead:
   stage: build
-  script: ./build-device.sh bullhead aosp_bullhead
+  variables:
+    DEVICE: "bullhead"
+    PRODUCT: "aosp_bullhead"
+  script: ./build-device.sh $DEVICE $PRODUCT
 
 build:deb:
   stage: build
-  script: ./build-device.sh deb lineage_deb
+  variables:
+    DEVICE: "deb"
+    PRODUCT: "lineage_deb"
+  script: ./build-device.sh $DEVICE $PRODUCT
