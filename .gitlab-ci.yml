@@ -27,13 +27,6 @@ build:chaozu:
     PRODUCT: "lineage_chaozu"
   script: ./build-device.sh $DEVICE $PRODUCT
 
-build:bullhead:
-  stage: build
-  variables:
-    DEVICE: "bullhead"
-    PRODUCT: "aosp_bullhead"
-  script: ./build-device.sh $DEVICE $PRODUCT
-
 build:deb:
   stage: build
   variables:
