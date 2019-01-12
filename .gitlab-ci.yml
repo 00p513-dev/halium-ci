@@ -13,11 +13,25 @@ cache:
   paths:
     - ccache
 
-build:yuga:
+build:pme:
   stage: build
   variables:
-    DEVICE: "yuga"
-    PRODUCT: "lineage_yuga"
+    DEVICE: "pme"
+    PRODUCT: "lineage_pme"
+  script: ./build-device.sh $DEVICE $PRODUCT
+
+build:oneplus3:
+  stage: build
+  variables:
+    DEVICE: "oneplus3"
+    PRODUCT: "halium_oneplus3"
+  script: ./build-device.sh $DEVICE $PRODUCT
+
+build:T00F:
+  stage: build
+  variables:
+    DEVICE: "T00F"
+    PRODUCT: "lineage_T00F"
   script: ./build-device.sh $DEVICE $PRODUCT
 
 build:chaozu:
