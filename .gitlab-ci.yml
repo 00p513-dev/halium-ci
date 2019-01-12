@@ -22,24 +22,6 @@ build:pme:
     - ./build-device.sh $DEVICE $PRODUCT
     - ./rsync_deploy.sh
 
-build:oneplus3:
-  stage: build
-  variables:
-    DEVICE: "oneplus3"
-    PRODUCT: "halium_oneplus3"
-  script:
-    - ./build-device.sh $DEVICE $PRODUCT
-    - ./rsync_deploy.sh
-
-build:T00F:
-  stage: build
-  variables:
-    DEVICE: "T00F"
-    PRODUCT: "lineage_T00F"
-  script:
-    - ./build-device.sh $DEVICE $PRODUCT
-    - ./rsync_deploy.sh
-
 build:chaozu:
   stage: build
   variables:
