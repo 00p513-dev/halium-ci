@@ -48,3 +48,12 @@ build:serranodsdd:
   script:
     - ./build-device.sh $DEVICE $PRODUCT
     - ./rsync_deploy.sh
+
+build:yuga:
+  stage: build
+  variables:
+    DEVICE: "yuga"
+    PRODUCT: "lineage_yuga"
+  script:
+    - ./build-device.sh $DEVICE $PRODUCT
+    - ./rsync_deploy.sh
