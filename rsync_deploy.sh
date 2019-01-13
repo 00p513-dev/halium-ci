@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FILES="find halium/out -name 'system.img' -or -name 'halium-boot.img' -or -name 'hybris-boot.img'"
+FILES="$(find halium/out -name 'system.img' -or -name 'halium-boot.img' -or -name 'hybris-boot.img')"
 
 echo $DEPLOY_KEY_PRIVATE | base64 -d | xz -d > ~/.ssh/id_rsa
 echo $DEPLOY_KEY_PUBLIC | base64 -d | xz -d > ~/.ssh/id_rsa.pub
