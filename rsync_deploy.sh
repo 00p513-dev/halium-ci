@@ -16,5 +16,5 @@ done
 # Deploy to server
 rsync -avzP -e \
         "ssh -o StrictHostKeyChecking=no -p $DEPLOY_PORT" \
-        halium/$ARTIFACTS \
+        $ARTIFACTS \
         $DEPLOY_ACCOUNT:/var/www/archive.kaidan.im/halium/$DEVICE
