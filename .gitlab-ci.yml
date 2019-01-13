@@ -40,7 +40,7 @@ build:deb:
     - ./build-device.sh $DEVICE $PRODUCT
     - ./rsync_deploy.sh
 
-build:deb:
+build:serranodsdd:
   stage: build
   variables:
     DEVICE: "serranodsdd"
