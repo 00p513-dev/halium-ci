@@ -23,3 +23,5 @@ rm -rf \
 # Actually start building
 lunch ${PRODUCT}-userdebug
 mka hybris-boot halium-boot systemimage
+
+cd ..
