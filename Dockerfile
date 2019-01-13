@@ -34,7 +34,8 @@ RUN apt update && \
         cpio \
         bc \
         liblz4-tool \
-        lzop && \
+        lzop \
+        findutils && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
