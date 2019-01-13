@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-FILES="$(find halium/out -name 'system.img' -or -name 'halium-boot.img' -or -name 'hybris-boot.img')"
+ARTIFACTS="$(find $CI_PROJECT_DIR/halium/out -name 'system.img' -or -name 'halium-boot.img' -or -name 'hybris-boot.img')"
+echo "Deploying $ARTIFACTS"
 
 mkdir -p ~/.ssh/
 echo $DEPLOY_KEY_PRIVATE | base64 -d | xz -d > ~/.ssh/id_rsa
@@ -15,5 +16,5 @@ done
 # Deploy to server
 rsync -avzP -e \
         "ssh -o StrictHostKeyChecking=no -p $DEPLOY_PORT" \
-        halium/$FILES \
+        halium/$ARTIFACTS \
         $DEPLOY_ACCOUNT:/var/www/archive.kaidan.im/halium/$DEVICE
