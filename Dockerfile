@@ -33,6 +33,7 @@ RUN apt update && \
         imagemagick \
         cpio \
         bc \
+        bsdiff \
         liblz4-tool \
         lzop \
         findutils && \
