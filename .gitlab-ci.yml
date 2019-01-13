@@ -39,3 +39,12 @@ build:deb:
   script:
     - ./build-device.sh $DEVICE $PRODUCT
     - ./rsync_deploy.sh
+
+build:deb:
+  stage: build
+  variables:
+    DEVICE: "serranodsdd"
+    PRODUCT: "lineage_serranodsdd"
+  script:
+    - ./build-device.sh $DEVICE $PRODUCT
+    - ./rsync_deploy.sh
