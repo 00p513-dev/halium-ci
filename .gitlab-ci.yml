@@ -57,3 +57,12 @@ build:yuga:
   script:
     - ./build-device.sh $DEVICE $PRODUCT
     - ./rsync_deploy.sh
+
+build:a5y17lte:
+  stage: build
+  variables:
+    DEVICE: "a5y17lte"
+    PRODUCT: "lineage_a5y17lte"
+  script:
+    - ./build-device.sh $DEVICE $PRODUCT
+    - ./rsync_deploy.sh
