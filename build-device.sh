@@ -6,7 +6,7 @@ PRODUCT=$2
 # Seems like we can't share this step between the different jobs :/
 mkdir halium && cd halium
 repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
-repo sync -q -c -j 150
+repo sync -q -c --no-clone-bundle -j 150
 
 # Download device specific sources
 source build/envsetup.sh
