@@ -8,6 +8,10 @@ mkdir halium && cd halium
 repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
 repo sync -q -c --no-clone-bundle -j 150
 
+# Copy bsdiff executable from host
+mkdir -p halium/out/host/linux-x86/bin
+cp $(command -v bsdiff) halium/out/host/linux-x86/bin/bsdiff
+
 # Download device specific sources
 source build/envsetup.sh
 ./halium/devices/setup ${DEVICE} --force-sync
