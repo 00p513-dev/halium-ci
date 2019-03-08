@@ -16,8 +16,9 @@ build:pme:
   variables:
     DEVICE: "pme"
     PRODUCT: "lineage_pme"
+    HALIUM_BRANCH: "halium-7.1"
   script:
-    - ./build-device.sh $DEVICE $PRODUCT
+    - ./build-device.sh $HALIUM_BRANCH $DEVICE $PRODUCT
     - ./rsync_deploy.sh
 
 build:chaozu:
@@ -25,8 +26,9 @@ build:chaozu:
   variables:
     DEVICE: "chaozu"
     PRODUCT: "lineage_chaozu"
+    HALIUM_BRANCH: "halium-7.1"
   script:
-    - ./build-device.sh $DEVICE $PRODUCT
+    - ./build-device.sh $HALIUM_BRANCH $DEVICE $PRODUCT
     - ./rsync_deploy.sh
 
 build:deb:
@@ -34,8 +36,9 @@ build:deb:
   variables:
     DEVICE: "deb"
     PRODUCT: "lineage_deb"
+    HALIUM_BRANCH: "halium-7.1"
   script:
-    - ./build-device.sh $DEVICE $PRODUCT
+    - ./build-device.sh $HALIUM_BRANCH $DEVICE $PRODUCT
     - ./rsync_deploy.sh
 
 build:serranodsdd:
@@ -43,8 +46,9 @@ build:serranodsdd:
   variables:
     DEVICE: "serranodsdd"
     PRODUCT: "lineage_serranodsdd"
+    HALIUM_BRANCH: "halium-7.1"
   script:
-    - ./build-device.sh $DEVICE $PRODUCT
+    - ./build-device.sh $HALIUM_BRANCH $DEVICE $PRODUCT
     - ./rsync_deploy.sh
 
 build:yuga:
@@ -52,8 +56,9 @@ build:yuga:
   variables:
     DEVICE: "yuga"
     PRODUCT: "lineage_yuga"
+    HALIUM_BRANCH: "halium-7.1"
   script:
-    - ./build-device.sh $DEVICE $PRODUCT
+    - ./build-device.sh $HALIUM_BRANCH $DEVICE $PRODUCT
     - ./rsync_deploy.sh
 
 build:a5y17lte:
@@ -61,6 +66,17 @@ build:a5y17lte:
   variables:
     DEVICE: "a5y17lte"
     PRODUCT: "lineage_a5y17lte"
+    HALIUM_BRANCH: "halium-7.1"
   script:
-    - ./build-device.sh $DEVICE $PRODUCT
+    - ./build-device.sh $HALIUM_BRANCH $DEVICE $PRODUCT
+    - ./rsync_deploy.sh
+
+build:hammerhead:
+  stage: build
+  variables:
+    DEVICE: "hammerhead"
+    PRODUCT: "full_hammerhead"
+    HALIUM_BRANCH: "halium-5.1"
+  script:
+    - ./build-device.sh $HALIUM_BRANCH $DEVICE $PRODUCT
     - ./rsync_deploy.sh

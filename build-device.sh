@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-DEVICE=$1
-PRODUCT=$2
+HALIUM_BRANCH=$1
+DEVICE=$2
+PRODUCT=$3
 
 # Seems like we can't share this step between the different jobs :/
 mkdir halium && cd halium
-repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
+repo init -u https://github.com/Halium/android -b ${HALIUM_BRANCH} --depth=1
 repo sync -q -c --no-clone-bundle -j 150
 
 # Copy bsdiff executable from host
