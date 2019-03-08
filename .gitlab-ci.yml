@@ -5,8 +5,6 @@ stages:
   - deploy
 
 variables:
-  USE_CCACHE: "true"
-  CCACHE_DIR: "$CI_PROJECT_DIR/ccache"
   TARGET_BUILD_JAVA_SUPPORT_LEVEL: ""
 
 cache:
