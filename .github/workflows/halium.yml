@@ -48,7 +48,6 @@ jobs:
         git config --global user.email "thisemaildoesnotexist@exist.com"
     - name: Downloading source code
       run: |
-        source halium.env
         mkdir -p $ANDROID_ROOT
         cd $ANDROID_ROOT
         repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
